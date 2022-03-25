@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
-    Title: {
+    title: {
         type: String,
         required: true
     },
-    Price: {
+    price: {
         type: Number,
         required: true
     },
-    Description: {
+    description: {
         type: String,
         required: true,
         minlength: [5, "must be longer than one word!"]
