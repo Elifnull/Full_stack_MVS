@@ -24,7 +24,7 @@ const AllProducts = (props) => {
             {
                 productArray.map((product,index)=>(
                     <div key={index}>
-                        <p>Name of Product: {product.title}</p>
+                        <p>Name of Product: <Link to={`/product/${product._id}`}>{product.title}</Link></p>
                         <p>Description: {product.description}</p>
                         <p>Price: ${product.price}</p>
                         <br/>!!!
