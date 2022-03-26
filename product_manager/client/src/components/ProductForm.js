@@ -24,7 +24,7 @@ const ProductForm = (props) => {
                 setTitle("");
                 setDescription("");
                 setPrice("");
-                navigate("/products");
+                navigate("/");
             })
             .catch(err => console.log(err))
     }
@@ -32,9 +32,6 @@ const ProductForm = (props) => {
 
     return(
         <div>
-            <header>
-                <Link to={"/products"}>View All Products</Link>
-            </header>
             <br/>
             <h2>Product Manager</h2>
             <form onSubmit={onSubmitHandler}>

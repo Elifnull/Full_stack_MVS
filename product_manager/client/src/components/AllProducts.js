@@ -18,9 +18,6 @@ const AllProducts = (props) => {
 
     return(
         <div>
-            <header>
-                <Link to={"/"}>Create Product</Link>
-            </header>
             {
                 productArray.map((product,index)=>(
                     <div key={index}>

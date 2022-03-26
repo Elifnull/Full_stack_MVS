@@ -22,7 +22,7 @@ const OneProduct = (props) => {
         axios.delete(`http://localhost:8000/api/product/${id}`)
         .then(deletion =>{
             console.log(deletion);
-            navigate("/products")
+            navigate("/")
         })
         .catch((err)=> console.log(err));
     }
@@ -30,7 +30,7 @@ const OneProduct = (props) => {
     return (
         <div>
             <header>
-                <Link to={"/products"}>View All Products</Link>
+                <Link to={"/"}>View All Products</Link>
             </header>
             <h2>{objProduct.title}</h2>
             <p>Price: ${objProduct.price}</p>
