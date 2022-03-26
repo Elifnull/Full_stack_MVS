@@ -3,6 +3,7 @@ import ProductForm from './components/ProductForm';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import AllProducts from "./components/AllProducts";
 import OneProduct from './components/OneProduct';
+import UpdateProduct from './components/UpdateProduct';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<ProductForm/>}/>
           <Route path="/products" element={<AllProducts/>} />
           <Route path='/product/:id' element={<OneProduct/>} />
+          <Route path='/product/update/:id' element={<UpdateProduct/>} />
         </Routes>
       </div>
     </BrowserRouter>

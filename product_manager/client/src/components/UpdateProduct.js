@@ -1,19 +1,20 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-const ProductForm = (props) => {
+const UpdateProduct = (props) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
-
+    
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const onSubmitHandler = (e) => {
 
         e.preventDefault();
 
-        axios.post("http://localhost:8000/api/product",{
+        axios.put(`http://localhost:8000/api/product/${id}`,{
             title,
             price,
             description
@@ -21,14 +22,22 @@ const ProductForm = (props) => {
             .then(result => {
                 console.log(result);
                 console.log(result.body);
-                setTitle("");
-                setDescription("");
-                setPrice("");
                 navigate("/products");
             })
             .catch(err => console.log(err))
     }
 
+    useEffect(()=>{
+        axios.get(`http://localhost:8000/api/product/${id}`)
+            .then((oneProd) => {
+                console.log(oneProd)
+                console.log(oneProd.data.product)
+                setTitle(oneProd.data.product.title);
+                setDescription(oneProd.data.product.description);
+                setPrice(oneProd.data.product.price);
+            })
+            .catch(err => console.log(err));
+    },[])
 
     return(
         <div>
@@ -50,10 +59,10 @@ const ProductForm = (props) => {
                     <label>Description</label>
                     <input type="text" value={description} onChange={(e)=> setDescription(e.target.value)}/>
                 </div>
-                <input type="submit" value="Create"/>
+                <input type="submit" value="Update"/>
             </form>
         </div>
     )
 }
 
-export default ProductForm;
+export default UpdateProduct;

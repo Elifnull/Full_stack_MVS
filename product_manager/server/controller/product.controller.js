@@ -25,13 +25,13 @@ module.exports.findOneProduct = (request, response) => {
         });
 }
 
-module.exports.deleteOneProduct = (response, request) => {
+module.exports.deleteOneProduct = (request, response) => {
     Product.deleteOne({_id: request.params.id})
         .then(uponDelete => res.json(uponDelete))
         .catch(err=> response.json({message: `error:${err}`}));
 }
 
-module.exports.updateExistingProduct = (response, request) => {
+module.exports.updateExistingProduct = (request, response) => {
     Product.findOneAndUpdate({_id: request.params.id},
         request.body,
         { new: true, runValidators: true}
