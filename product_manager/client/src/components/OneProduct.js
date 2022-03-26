@@ -3,7 +3,7 @@ import {Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const OneProduct = (props) => {
-    const { id } = useParams();
+    const { id } = useParams();//don't forget that params is a function!!!
     const [objProduct, setObjProduct] = useState({});
 
     useEffect(() => {
