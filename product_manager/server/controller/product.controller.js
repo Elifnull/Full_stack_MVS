@@ -30,3 +30,17 @@ module.exports.deleteOneProduct = (response, request) => {
         .then(uponDelete => res.json(uponDelete))
         .catch(err=> response.json({message: `error:${err}`}));
 }
+
+module.exports.updateExistingProduct = (response, request) => {
+    Product.findOneAndUpdate({_id: request.params.id},
+        request.body,
+        { new: true, runValidators: true}
+        )
+        .then(updatedProd => {
+            console.log(updatedProd);
+            response.json({product: updatedProd})
+        })
+        .catch((err)=>{
+            response.status(400).json(err);
+        })
+}
