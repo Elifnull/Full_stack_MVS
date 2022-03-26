@@ -1,6 +1,7 @@
 import './App.css';
 import ProductForm from './components/ProductForm';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import AllProducts from "./components/AllProducts";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<ProductForm/>}/>
+          <Route path="/products" element={<AllProducts/>} />
         </Routes>
       </div>
     </BrowserRouter>

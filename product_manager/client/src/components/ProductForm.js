@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ProductForm = (props) => {
     const [title, setTitle] = useState("");
@@ -28,6 +29,10 @@ const ProductForm = (props) => {
 
     return(
         <div>
+            <header>
+                <Link to={"/products"}>View All Products</Link>
+            </header>
+            <br/>
             <h2>Product Manager</h2>
             <form onSubmit={onSubmitHandler}>
                 <div>
