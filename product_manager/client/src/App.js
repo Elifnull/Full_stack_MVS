@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import ProductForm from './components/ProductForm';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <ProductForm/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<ProductForm/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
