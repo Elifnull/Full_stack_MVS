@@ -12,13 +12,13 @@ module.exports.findAllAuthors = (request, response) => {
             console.log(foundAuthor);
             response.json(foundAuthor);
         })
-        .catch(error => response.json({message: error}, err));
+        .catch(error => response.status(400).json(error));
 }
 
 module.exports.deleteOneAuthor = (request, response) =>{
     Author.deleteOne({_id: request.params.id})
         .then(deletedAuthor => response.json(deletedAuthor))
-        .catch(error => response.json({message: error}));
+        .catch(error => response.status(400).json(error));
 }
 
 module.exports.updateAuthor = (request, response) => {
@@ -33,4 +33,12 @@ module.exports.updateAuthor = (request, response) => {
         .catch((error) =>{
             response.status(400).json(error);
         })
+}
+
+module.exports.findOneAuthor = (request, response) => {
+    Author.findById({_id: request.params.id})
+        .then(foundAuthor => response.json(foundAuthor))
+        .catch((err) => {
+            response.status(400).json(err)
+        });
 }
