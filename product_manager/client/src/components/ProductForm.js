@@ -23,7 +23,7 @@ const ProductForm = (props) => {
                 console.log(result.body);
                 setTitle("");
                 setDescription("");
-                setPrice("");
+                setPrice(0);
                 navigate("/");
             })
             .catch(err => console.log(err))
@@ -41,7 +41,7 @@ const ProductForm = (props) => {
                 </div>
                 <div>
                     <label>Price</label>
-                    <input type="number" value={price} onChange={e => setPrice(e.target.valueAsNumber)}/>
+                    <input type="number" valueasnumber={price} onChange={e => setPrice(e.target.valueAsNumber)}/>
                 </div>
                 <div>
                     <label>Description</label>
