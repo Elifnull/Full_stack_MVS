@@ -5,6 +5,7 @@ import {Form, Card, Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Authorform from './components/form';
 import DisplayAuthors from "./components/AllAuthors";
+import UpdateAuthor from "./components/updateAuthor";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DisplayAuthors/>}/>
           <Route path="/create" element={<Authorform/>}/>
-          <Route/>
+          <Route path="/edit/:id" element={<UpdateAuthor/>}/>
         </Routes>
       </BrowserRouter>
     </div>
