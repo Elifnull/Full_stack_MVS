@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes, Link, useNavigate } from "react-router-dom
 import {Form, Card, Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Authorform from './components/form';
-import AllAuthors from "./components/AllAuthors";
+import DisplayAuthors from "./components/AllAuthors";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AllAuthors/>}/>
+          <Route path="/" element={<DisplayAuthors/>}/>
           <Route path="/create" element={<Authorform/>}/>
           <Route/>
         </Routes>
