@@ -9,7 +9,7 @@ const Authorform = (props) =>{
     const [name, setName] = useState('');
     const [error, setError] =useState({});
     
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const submitHandler = (e) =>{
@@ -17,7 +17,7 @@ const Authorform = (props) =>{
         axios.post("http://localhost:8000/api/author", { name })
         .then((response) => {
             console.log(response);
-            //navigate("/")
+            navigate("/")
         })
         .catch((error) => {
             console.log(error.response.data.errors);
