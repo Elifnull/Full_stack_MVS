@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const petdb = "Task_Savvy";
+const db = "Task_Savvy";
 
-mongoose.connect(`mongodb://localhost/${petdb}`,{
+mongoose.connect(`mongodb://localhost/${db}`,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-    .then(()=> console.log(`connected to ${petdb}`))
+    .then(()=> console.log(`connected to ${db}`))
     .catch((error)=> console.log(`problem connecting to ${petdb}, error: ${error}`, error))
