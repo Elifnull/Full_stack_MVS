@@ -6,4 +6,4 @@ mongoose.connect(`mongodb://localhost/${db}`,{
     useUnifiedTopology: true
 })
     .then(()=> console.log(`connected to ${db}`))
-    .catch((error)=> console.log(`problem connecting to ${petdb}, error: ${error}`, error))
+    .catch((error)=> console.log(`problem connecting to ${db}, error: ${error}`, error))
