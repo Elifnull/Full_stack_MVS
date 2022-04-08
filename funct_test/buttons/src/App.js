@@ -16,7 +16,7 @@ function App() {
     <Card className="col-4 p-4 mx-auto my-3">
       <h3>the count: {count}</h3>
       {button?
-      <Button onClick={()=>{setCount(count+1); setbutton(!button)}} >Count +1</Button>:
+      <Button onClick={()=>{setCount(count+1); setButton(!button)}} >Count +1</Button>:
       <Button disabled>Count +1</Button>
       }
       <Button className="btn-danger my-3" onClick={()=>setbutton(true)}>Enable</Button>
